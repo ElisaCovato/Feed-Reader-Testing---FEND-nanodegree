@@ -55,7 +55,7 @@ $(function() {
          * hidden by default. We check that the body has
          * the class  'menu-hidden'.
          */
-        it('menu element is hidden by default', function() {
+        it('is hidden by default', function() {
             expect(body.className).toContain("menu-hidden");
         });
 
@@ -64,7 +64,7 @@ $(function() {
           * menu is displayed when
           * clicked and it hides  when clicked again.
           */
-        it('menu changes visibility when clicked', function() {
+        it('changes visibility when clicked', function() {
             menuIcon.click();
             expect(body.className).not.toContain("menu-hidden");
 
@@ -90,7 +90,7 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-        it('at least a singele entry element in the feed container', function(done) {
+        it('has at least a single entry element in the feed container', function(done) {
             var numberOfEntries = document.querySelector(".feed").getElementsByClassName("entry").length;
             expect(numberOfEntries).toBeGreaterThan(0);
             done();
@@ -114,7 +114,7 @@ $(function() {
          /* This test ensures that when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        it('content changes when new feed is loaded', function() {
+        it('changes content when new feed is loaded', function(done) {
             var newFeed = document.querySelector(".feed").innerHTML;
             expect(initialFeed).not.toBe(newFeed);
             done();
